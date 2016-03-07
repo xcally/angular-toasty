@@ -4,7 +4,7 @@ Angular Toasty
 
 #### Demo
 
-[Check it out!](http://invertase.github.io/angular-toasty/example/)
+[Check it out!](http://teamfa.com/angular-toasty/example/)
 
 #### Current Features
 * 3 Themes (Default, Material Design & Bootstrap 3)
@@ -70,7 +70,7 @@ The default toasty config:
 * limit: 5, // {int} Maximum number of toasties to show at once
 showClose: true, // {bool} Whether to show the 'X' icon to close the toasty
 clickToClose: false, // {bool} Whether clicking the toasty closes it
-* position: 'bottom-right', // {string:bottom-right,bottom-left,top-right,top-left} The window position where the toast pops up
+* position: 'bottom-right', // {string:bottom-right,bottom-left,top-right,top-left,top-center,bottom-center} The window position where the toast pops up
 timeout: 5000, // {int} How long (in miliseconds) the toasty shows before it's removed. Set to false to disable.
 sound: true, // {bool} Whether to play a sound when a toast is added
 html: false, // {bool} Whether HTML is allowed in toasts
@@ -175,4 +175,4 @@ $rootScope.$on('toasty-cleared', function(event, toast) { console.log(toast) });
 
 #### Contributing
 
-Please see the [contributing guidelines](https://github.com/invertase/angular-toasty/blob/master/CONTRIBUTING.md).
+Please see the [contributing guidelines](https://github.com/teamfa/angular-toasty/blob/master/CONTRIBUTING.md).
