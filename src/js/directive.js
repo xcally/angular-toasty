@@ -104,7 +104,7 @@ angular.module('angular-toasty').directive('toasty', ['toasty', '$timeout', '$sc
 				else
 					theme = config.theme;
 
-				// If we've gone over our limit, remove the earliest 
+				// If we've gone over our limit, remove the earliest
 				// one from the array
 				if (scope.toasty.length >= config.limit)
 					scope.toasty.shift();
@@ -126,7 +126,9 @@ angular.module('angular-toasty').directive('toasty', ['toasty', '$timeout', '$sc
 					theme: 'toasty-theme-' + theme,
 					onAdd: options.onAdd && angular.isFunction(options.onAdd) ? options.onAdd : null,
 					onRemove: options.onRemove && angular.isFunction(options.onRemove) ? options.onRemove : null,
-					onClick: options.onClick && angular.isFunction(options.onClick) ? options.onClick : null
+					onClick: options.onClick && angular.isFunction(options.onClick) ? options.onClick : null,
+					onAccept: options.onAccept && angular.isFunction(options.onAccept) ? options.onAccept : null,
+					onReject: options.onReject && angular.isFunction(options.onReject) ? options.onReject : null
 				};
 
 				// Push up a new toast item
@@ -143,9 +145,9 @@ angular.module('angular-toasty').directive('toasty', ['toasty', '$timeout', '$sc
 				// set the toast to timeout
 				if (options.timeout != false) {
 					if (options.timeout || config.timeout)
-						setTimeout(scope.toasty[scope.toasty.length - 1], options.timeout || config.timeout);	
+						setTimeout(scope.toasty[scope.toasty.length - 1], options.timeout || config.timeout);
 				}
-	
+
 			}
 		},
 		template: '<div id="toasty" ng-class="[position]">'
@@ -158,6 +160,10 @@ angular.module('angular-toasty').directive('toasty', ['toasty', '$timeout', '$sc
 								+ '<br ng-if="toast.title && toast.msg" />'
 								+ '<span class="toast-msg" ng-if="!toast.html && toast.msg" ng-bind="toast.msg"></span>'
 								+ '<span class="toast-msg" ng-if="toast.html && toast.msg" ng-bind-html="toast.msg"></span>'
+								+ '<div layout="row">'
+									+ '<span ng-if="toast.onAccept" class="md-button md-raised md-accent" ng-click="toast.onAccept()">ACCEPT</span>'
+									+ '<span ng-if="toast.onReject" class="md-button md-raised md-warn" ng-click="toast.onReject()">REJECT</span>'
+								+ '</div>'
 							+ '</div>'
 						+'</div>'
 				  + '</div>'
