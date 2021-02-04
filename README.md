@@ -16,7 +16,7 @@ Angular Toasty
 ###### Install from Bower:
 
 ```HTML
-bower install angular-toasty
+npm install @xenialab/angular-toasty
 ```
 ###### Add dependancies to HTML (AngularJS required)
 
