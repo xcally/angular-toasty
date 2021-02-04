@@ -1,6 +1,10 @@
 {
-  "name": "angular-toasty",
-  "version": "1.0.6",
+  "name": "@xenialab/angular-toasty",
+  "version": "1.0.7",
+  "main": "dist/angular-toasty.min.js",
+  "files":[
+    "dist"
+  ],
   "author": "Team FA",
   "devDependencies": {
     "bower": "~1.4.1",
